@@ -1,0 +1,102 @@
+.dis-popular_course {
+    width: 100%;
+    border-radius: 11.2px;
+    border: 1px solid #eee;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.dis-popular_course:hover {
+    border: 1px solid #33b294;
+}
+
+.dis-popular_course .popular_thumb {
+    padding: 4.67px;
+    padding-bottom: 0;
+}
+
+.dis-popular_course .popular_thumb img {
+    max-width: 100%;
+    width: 100%;
+    height: 154px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 7.467px 9.333px 0px 0px;
+}
+
+.dis-popular_course .popular_title h2 {
+    margin: 16px 14px;
+    color: #474d5c;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22.4px;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 44px;
+}
+
+.dis-popular_course .popular_title h2 a {
+    color: inherit;
+    font-weight: inherit;
+}
+
+.dis-popular_course .dis-course__end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-radius: 0px 0px 10.267px 10.267px;
+    background: rgba(51, 178, 148, 0.06);
+    padding: 12px;
+}
+
+.dis-popular_course .dis-course__end a {
+    display: inline-block;
+    padding: 7.467px 18.667px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 53.73px;
+    transition: all 0.3s ease;
+}
+
+.dis-popular_course .dis-course__end .dis_viewMore_btn {
+    color: #f1892a;
+    border: 1px solid #f1892a;
+}
+
+.dis-popular_course .dis-course__end .dis_viewMore_btn:hover {
+    background: #f1892a;
+    color: #fff;
+}
+
+.dis-popular_course .dis-course__end .dis_addCart_btn {
+    border-radius: 43.73px;
+    background: #33b294;
+    color: #fff;
+    border: 1px solid #33b294;
+}
+
+.dis-popular_course .dis-course__end .dis_addCart_btn:hover {
+    background: transparent;
+    color: #33b294;
+}
+
+.dis-pCourse_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 19px;
+    place-items: center;
+}
+
+@media only screen and (max-width: 591px) {
+    .dis-popular_course {
+        max-width: 280px;
+    }
+}
