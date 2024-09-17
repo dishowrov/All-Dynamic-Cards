@@ -9,7 +9,7 @@
     padding: 7px 7px 15px 7px;
     background-color: #ffffff;
     max-width: 405px;
-} 
+}
 
 .dis-free-course-card a {
     text-decoration: none;
@@ -37,7 +37,7 @@
     line-height: 29.647px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 92px;
+    height: 85px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -48,6 +48,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 22px 13px 29px 13px;
+    padding-top: 21px;
     border-top: 1px solid #ededed;
 }
 
@@ -121,7 +122,7 @@
     background-color: #FFF;
 }
 
-.rating_sh_content .sh_rating {
+.dis-free-course-card .rating_sh_content .sh_rating {
     unicode-bidi: bidi-override;
     color: #c5c5c5;
     font-size: 25px;
@@ -131,9 +132,9 @@
     position: relative;
     padding: 0;
     text-shadow: 0px 1px 0 #a2a2a2;
-  }
-  
-  .rating_sh_content .sh_rating-upper {
+}
+
+.dis-free-course-card .rating_sh_content .sh_rating-upper {
     color: #fcc400;
     padding: 0;
     position: absolute;
@@ -142,13 +143,14 @@
     top: 0;
     left: 0;
     overflow: hidden;
-  }
-  
-  .rating_sh_content .sh_rating-lower {
+
+}
+
+.dis-free-course-card .rating_sh_content .sh_rating-lower {
     padding: 0;
     display: flex;
     z-index: 0;
-  }
+}
 
 /* Media Queries */
 @media (max-width: 1025px) {
@@ -161,5 +163,18 @@
 @media (max-width: 767px) {
     .dis-free-course-wrap {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 421px) {
+    .dis-free-course-card .dis-course-info p {
+        gap: 5px;
+        font-size: 15px;
+    }
+
+    .dis-free-course-card .rating_sh_content .sh_rating {
+        font-size: 21px;
+        height: 21px;
+        width: 90px;
     }
 }

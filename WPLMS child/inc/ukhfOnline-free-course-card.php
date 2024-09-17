@@ -11,7 +11,7 @@ function dis_free_courses_shortcode()
             array(
                 'key' => 'vibe_course_free',
                 'value' => 'S',
-                'compare' => '='
+                'compare' => '=' 
             ),
         ),
         'post_status' => 'publish',
@@ -29,11 +29,10 @@ function dis_free_courses_shortcode()
 
                 $course_ID = get_the_ID();
                 $course_title = get_the_title($course_ID);
-                $course_img = get_the_post_thumbnail_url($course_ID, "large") ?: 'https://uk.hfonline.org/wp-content/uploads/2024/09/thumbnail-of-the-FreeCourse.webp';
+                $course_img = get_the_post_thumbnail_url($course_ID, "large") ?: 'https://uk.hfonline.org/wp-content/uploads/2024/09/dummy-imageforfreecourse.webp';
                 $course_link = get_the_permalink($course_ID);
                 $average_rating = get_post_meta($course_ID, 'average_rating', true) ?: '0';
-                $countRating = get_post_meta($course_ID, 'rating_count', true) ?: '0';
-                $students = get_post_meta($course_ID, 'students', true) ?: '0';
+                $students = get_post_meta($course_ID, 'vibe_students', true) ?: '0';
 
                 $rating_percentage = ($average_rating / 5) * 100;
             ?>
