@@ -1,0 +1,102 @@
+/* Cards CSS - started */
+.r4h-edux-course-card {
+    max-width: 228px;
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 3px #31528a18;
+    border: 1px solid transparent;
+    transition: all linear 0.2s;
+}
+
+.r4h-edux-course-card:hover {
+    box-shadow: 0px 0px 11px 5px #31528a2f;
+}
+
+.r4h-edux-course-card .image-duration {
+    width: 100%;
+    height: 134px;
+    position: relative;
+}
+
+.r4h-edux-course-card .image-duration .image {
+    width: 100%;
+    height: 134px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.r4h-edux-course-card .image-duration .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.r4h-edux-course-card .image-duration span {
+    background-color: #231F4990;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.r4h-edux-course-card .details {
+    margin: 13px 9px;
+}
+
+.r4h-edux-course-card .details h3.tag {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: "Inter", sans-serif;
+    color: #59C069;
+    text-transform: uppercase;
+}
+
+.r4h-edux-course-card .details h1.title {
+    margin: 0 0 7px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: "Inter", sans-serif;
+    color: #31528A;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.r4h-edux-course-card .details h1.title a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: all linear 0.2s;
+}
+
+.r4h-edux-course-card .details h1.title a:hover {
+    color: #0090B6;
+}
+
+.r4h-edux-course-card .details h6.viewers {
+    margin: 6px 0 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "Inter", sans-serif;
+    color: #00ADDA;
+}
+
+/* Cards CSS - ended */
+/* End custom CSS */
