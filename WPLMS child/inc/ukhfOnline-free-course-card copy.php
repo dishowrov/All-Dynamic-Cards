@@ -4,8 +4,8 @@ function dis_free_courses_shortcode($atts)
     // Set up the shortcode attributes with default values
     $atts = shortcode_atts(
         array(
-            'limit' => 6,   // Default limit is 6
-            'ids'   => '',  // Default is empty, meaning no specific courses are selected
+            'limit' => 6,
+            'ids'   => '',
         ),
         $atts,
         'dis_free_courses'
@@ -13,31 +13,33 @@ function dis_free_courses_shortcode($atts)
 
     ob_start();
 
-    // Prepare the query arguments
+
     $args = array(
         'post_type' => 'course',
-        'posts_per_page' => intval($atts['limit']),  // Use the limit attribute
+        'posts_per_page' => intval($atts['limit']),
         'meta_query' => array(
             array(
                 'key' => 'vibe_course_free',
                 'value' => 'S',
-                'compare' => '=' 
+                'compare' => '='
             ),
         ),
         'post_status' => 'publish',
     );
 
-    // If specific IDs are provided, include them in the query
+
     if (!empty($atts['ids'])) {
-        $course_ids = explode(',', $atts['ids']);  // Convert the comma-separated string into an array
-        $args['post__in'] = array_map('intval', $course_ids);  // Add to query and sanitize IDs
+        $course_ids = explode(',', $atts['ids']);
+        $args['post__in'] = array_map('intval', $course_ids);
     }
 
     $free_courses = new WP_Query($args);
 
     if ($free_courses->have_posts()) {
-        ?>
+?>
+        <!-- cards wrapper -->
         <div class="dis-free-course-wrap">
+
             <?php
             while ($free_courses->have_posts()) {
                 $free_courses->the_post();
@@ -50,8 +52,9 @@ function dis_free_courses_shortcode($atts)
                 $students = get_post_meta($course_ID, 'vibe_students', true) ?: '0';
 
                 $rating_percentage = ($average_rating / 5) * 100;
-                ?>
+            ?>
 
+                <!-- course card -->
                 <div class="dis-free-course-card">
                     <a href="<?php echo esc_attr($course_link); ?>" class="dis-course-thumbnail">
                         <img decoding="async" src="<?php echo esc_attr($course_img); ?>" alt="The Course Thumbnail">
@@ -92,7 +95,7 @@ function dis_free_courses_shortcode($atts)
             }
             ?>
         </div>
-        <?php
+<?php
         wp_reset_postdata();
     } else {
         echo "No free courses found.";

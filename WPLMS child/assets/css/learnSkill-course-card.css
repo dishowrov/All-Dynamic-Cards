@@ -303,17 +303,32 @@
     margin-left: 3px;
 }
 
-.dis-course-card  .rating__background {
-    fill: #bfc3ca;
-    stroke: red;
-    stroke-width: 1;
-    height: 100%;
-    width: 100%;
+.dis-course-card .star-ratings {
+    position: relative;
 }
 
-.dis-course-card  .rating__value {
-    fill: #ffbe00;
-    height: 100%;
+.dis-course-card .star-ratings .fill-ratings {
+    color: #ffbe00;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.dis-course-card .star-ratings .fill-ratings span {
+    display: inline-block;
+}
+
+.dis-course-card .star-ratings .empty-ratings {
+    padding: 0;
+    display: block;
+}
+
+.dis-course-card .dis-course-card-normal-contents .star-ratings .empty-ratings {
+    color: gray;
 }
 
 .dis-course-card .dis-course-card-hover-contents .dis-course-card-hover-contents-inner ul.dis-course-author-and-ratings li.dis-course-ratings ul li.dis-course-ratings-count {

@@ -129,23 +129,17 @@ function dis_learnSkill_course_card_shortcode($atts)
                                     <?php
                                     if (is_numeric($average_rating)) {
                                         $percentage = ($average_rating / 5) * 100;
-                                    ?>
-                                        <svg viewBox="0 0 1000 200" class="rating">
-                                            <defs>
-                                                <polygon id="star"
-                                                    points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 "></polygon>
-                                                <clipPath id="stars">
-                                                    <use xlink:href="#star"></use>
-                                                    <use xlink:href="#star" x="20%"></use>
-                                                    <use xlink:href="#star" x="40%"></use>
-                                                    <use xlink:href="#star" x="60%"></use>
-                                                    <use xlink:href="#star" x="80%"></use>
-                                                </clipPath>
-                                            </defs>
-                                            <rect class="rating__background" clip-path="url(#stars)"></rect>
-                                            <rect width="<?php echo esc_attr($percentage); ?>%" class="rating__value" clip-path="url(#stars)"></rect>
-                                        </svg>
-                                    <?php
+                                        echo '<div class="star-ratings">
+
+                                            <div class="fill-ratings" style="width:' . $percentage . '%;">
+                                                <span>★★★★★</span>
+                                            </div>
+
+                                            <div class="empty-ratings">
+                                                <span>★★★★★</span>
+                                            </div>
+
+                                            </div>';
                                     }
                                     ?>
                                 </li>
@@ -178,23 +172,17 @@ function dis_learnSkill_course_card_shortcode($atts)
                                     <?php
                                     if (is_numeric($average_rating)) {
                                         $percentage = ($average_rating / 5) * 100;
-                                    ?>
-                                        <svg viewBox="0 0 1000 200" class="rating">
-                                            <defs>
-                                                <polygon id="star"
-                                                    points="100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 "></polygon>
-                                                <clipPath id="stars">
-                                                    <use xlink:href="#star"></use>
-                                                    <use xlink:href="#star" x="20%"></use>
-                                                    <use xlink:href="#star" x="40%"></use>
-                                                    <use xlink:href="#star" x="60%"></use>
-                                                    <use xlink:href="#star" x="80%"></use>
-                                                </clipPath>
-                                            </defs>
-                                            <rect class="rating__background" clip-path="url(#stars)"></rect>
-                                            <rect width="<?php echo esc_attr($percentage); ?>%" class="rating__value" clip-path="url(#stars)"></rect>
-                                        </svg>
-                                    <?php
+                                        echo '<div class="star-ratings">
+
+                                            <div class="fill-ratings" style="width:' . $percentage . '%;">
+                                                <span>★★★★★</span>
+                                            </div>
+
+                                            <div class="empty-ratings">
+                                                <span>★★★★★</span>
+                                            </div>
+
+                                            </div>';
                                     }
                                     ?>
                                 </li>
