@@ -3,7 +3,7 @@ function dis_free_courses_shortcode($atts)
 {
     // Set up the shortcode attributes with default values
     $atts = shortcode_atts(
-        array(
+        array( 
             'limit' => 6,   // Default limit is 6
             'ids'   => '',  // Default is empty, meaning no specific courses are selected
         ),
