@@ -1,0 +1,118 @@
+.dis-course-card {
+    border: 1px solid #E7EBF1;
+    border-radius: 6px;
+    overflow: hidden;
+
+    max-width: 281px;
+    margin: 100px auto;
+}
+
+.dis-course-card .dis-card-thumbnail {
+    height: 199px;
+}
+
+.dis-course-card .dis-card-thumbnail a {
+    display: block;
+}
+
+.dis-course-card .dis-card-thumbnail a img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dis-course-card .dis-course-card-info {
+    padding: 20px;
+}
+
+.dis-course-card h3.dis-course-title {
+    color: #3F4554;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 49px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+.dis-course-card h3.dis-course-title a {
+    color: inherit;
+    font-weight: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+.dis-course-card .dis-course-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    padding: 20px 0 16px 0;
+}
+
+.dis-course-card .dis-course-meta p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+}
+
+.dis-course-card .dis-course-meta .dis-course-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: end;
+}
+
+.dis-course-card .dis-course-meta p.dis-price-in-pound {
+    color: #63BC6F;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.dis-course-card .dis-course-meta p.dis-price-in-dollar {
+    color: #B7C0B8;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.dis-course-card .dis-course-module {
+    color: #4B5162;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.dis-course-card .dis-course-module i {
+    color: inherit;
+    font-size: inherit;
+}
+
+.dis-course-card .dis-course-card-btn {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #3F4554;
+    border: 1px solid #E7EBF1;
+    border-radius: 3px;
+    padding: 11px;
+    text-align: center;
+}
+
+.dis-course-card .dis-course-card-btn i {
+    color: inherit;
+    font-size: inherit;
+}
+
+.dis-course-card .dis-course-card-btn a{
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+}

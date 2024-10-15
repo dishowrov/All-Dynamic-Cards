@@ -43,6 +43,7 @@ function ukhf_4t_courses_shortcode($atts)
             );
         }
     }
+
     // Check if 'filter' attribute is set for filtering courses
     elseif (!empty($atts['filter'])) {
 
@@ -92,7 +93,7 @@ function ukhf_4t_courses_shortcode($atts)
             "post_status" => "published",            // Display only published courses
         );
     }
-    
+
     // Default case: Display the most recent courses if no category, filter, or ID is provided
     else {
         $arg = array(
