@@ -1,11 +1,12 @@
 <?php
-
 function child_theme_assets()
 {
     // wp_enqueue_style("bootstrap", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
     // wp_enqueue_style('slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
     // wp_enqueue_style('slick-theme-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css');
+
+    wp_enqueue_style('font-awesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
     // wp_enqueue_style("libm-cards", get_stylesheet_directory_uri() . "/assets/css/my-cards.css");
     // wp_enqueue_style("libm-cards", get_stylesheet_directory_uri() . "/assets/css/LIBM-course-card.css");
@@ -14,7 +15,8 @@ function child_theme_assets()
     // wp_enqueue_style("ukhfOnline-cards", get_stylesheet_directory_uri() . "/assets/css/ukhfOnline-free-course-card.css");
     // wp_enqueue_style("eduX-cards", get_stylesheet_directory_uri() . "/assets/css/eduX-course-card.css");
     // wp_enqueue_style("learnSkill-cards", get_stylesheet_directory_uri() . "/assets/css/learnSkill-course-card.css");
-    wp_enqueue_style("alphaAcademy-course-card", get_stylesheet_directory_uri() . "/assets/css/alphaAcademy-course-card.css");
+    // wp_enqueue_style("alphaAcademy-course-card", get_stylesheet_directory_uri() . "/assets/css/alphaAcademy-course-card.css");
+    wp_enqueue_style("oneEdu-blog-css", get_stylesheet_directory_uri() . "/assets/css/oneEducation-blog-style.css");
 
 
     /* JavaScripts files */
@@ -32,4 +34,4 @@ add_action("wp_enqueue_scripts", "child_theme_assets");
 // include get_stylesheet_directory() . "/inc/ukhfOnline-popular_new_trending-courses.php";
 // include get_stylesheet_directory() . "/inc/eduX-course-card.php";
 // include get_stylesheet_directory() . "/inc/learnSkill-course-card.php";
-include get_stylesheet_directory() . "/inc/alphaAcademy-course-card.php";
+// include get_stylesheet_directory() . "/inc/alphaAcademy-course-card.php";
