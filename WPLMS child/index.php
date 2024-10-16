@@ -16,29 +16,34 @@ get_header(vibe_get_header());
         </div>
 
         <div class="dis-blog-hero-right">
-            <img src="" alt="Hero image">
+            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/woman-working-on-computer.webp" alt="Hero image">
         </div>
     </div>
 </div>
 <!-- Hero - section ended -->
+
 
 <!-- Navbar - section started -->
 <div class="dis-blog-navbar">
     <div class="blog-navbar-inner">
         <div class="dis-blog-navbar-tags">
             <?php
-            $categories = get_categories(
+            $category_ids = array(24, 19, 25);
+
+            $categories = get_terms(
                 array(
-                    'orderby' => 'name',
-                    'order' => 'ASC',
-                    'number' => 4,
+                    'taxonomy' => 'category',
+                    'orderby' => 'include',
+                    'include' => $category_ids,
+                    'hide_empty' => false
                 )
             );
 
             foreach ($categories as $category) {
             ?>
-                <a
-                    href="<?php echo esc_url(get_category_link($category->term_id)); ?>"><?php echo esc_html($category->name); ?></a>
+                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                    <?php echo esc_html($category->name); ?>
+                </a>
             <?php
             }
             ?>
@@ -59,35 +64,43 @@ get_header(vibe_get_header());
 </div>
 <!-- Navbar - section ended -->
 
-<!-- Popular blog post - section started -->
-<h2 class="dis-blog-sec-title">Popular Posts</h2>
 
-<div class="dis-all-blog-posts">
-
-    <?php
+<!-- Functionlities for Popular and Latest posts - started -->
+<?php
+function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
+{
     $args = array(
-        'posts_per_page' => '6',
-        'orderby' => 'comment_count',
-        'order' => 'DESC'
+        'posts_per_page' => $posts_per_page,
+        'paged' => $paged,
+        'orderby' => $type === 'popular' ? 'meta_value_num' : 'date',
+        'order' => 'DESC',
     );
+
+    if ($type === 'popular') {
+        $args['meta_key'] = 'post_views_count';
+        $args['meta_query'] = array(
+            array(
+                'key' => 'post_views_count',
+                'compare' => 'EXISTS',
+            )
+        );
+    }
 
     $blog_posts_query = new WP_Query($args);
 
     if ($blog_posts_query->have_posts()) :
         while ($blog_posts_query->have_posts()) : $blog_posts_query->the_post();
-    ?>
+?>
 
             <!-- Blog card -->
             <div class="dis-blog-post-card">
-
                 <div class="blog-card-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php
                         if (has_post_thumbnail()) : the_post_thumbnail('large');
-                        else :
-                        ?>
-                            <img src="#" alt="The Blog Thumbnail">
-                        <?php endif ?>
+                        else : ?>
+                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/sass-rect.webp" alt="The Blog Thumbnail">
+                        <?php endif; ?>
                     </a>
                 </div>
 
@@ -99,32 +112,40 @@ get_header(vibe_get_header());
                     </h3>
 
                     <div class="blog-card-meta">
-                        <span> <?php the_time('F j, Y') ?> </span>
+                        <span> <?php the_time('F j, Y'); ?> </span>
                         &nbsp; | &nbsp; By &nbsp;
                         <span> <?php the_author(); ?></span>
                     </div>
 
-                    <p class="blog-card-exerpt">
+                    <div class="blog-card-exerpt">
                         <?php the_excerpt(); ?>
-                    </p>
+                    </div>
                 </div>
-
             </div>
 
-        <?php
+<?php
         endwhile;
         wp_reset_postdata();
-
     else :
-        ?>
-        No popular posts found.
-    <?php
-
+        echo 'No posts found.';
     endif;
+}
+?>
+<!-- Functionlities for Popular and Latest posts - ended -->
+
+
+<!-- Popular blog post - section started -->
+<h2 class="dis-blog-sec-title">Popular Posts</h2>
+
+<div class="dis-all-blog-posts">
+
+    <?php
+    display_blog_posts('popular');
     ?>
 
 </div>
 <!-- Popular blog post - section ended -->
+
 
 <!-- Free Trial - section started -->
 <div class="dis-blog-trial-sec">
@@ -137,77 +158,41 @@ get_header(vibe_get_header());
 </div>
 <!-- Free Trial - section ended -->
 
+
 <!-- Latest blog post - section started -->
 <h2 class="dis-blog-sec-title">Latest Posts</h2>
 
 <div class="dis-all-blog-posts">
-
-    <?php
-    $args = array(
-        'posts_per_page' => '6',
-        'orderby' => 'date',
-        'order' => 'DESC'
-    );
-
-    $blog_posts_query = new WP_Query($args);
-
-    if ($blog_posts_query->have_posts()) :
-        while ($blog_posts_query->have_posts()) : $blog_posts_query->the_post();
+    <?php 
+    // Display the first 6 posts by default (on the first page only)
+    if (is_home() && !is_paged()) {
+        display_blog_posts('latest', 6); // 6 posts on the first page
+    } else {
+        display_blog_posts('latest', get_option('posts_per_page'), get_query_var('paged')); // Posts according to pagination
+    }
     ?>
+</div>
 
-            <!-- Blog card -->
-            <div class="dis-blog-post-card">
-
-                <div class="blog-card-thumb">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php
-                        if (has_post_thumbnail()) : the_post_thumbnail('large');
-                        else :
-                        ?>
-                            <img src="#" alt="The Blog Thumbnail">
-                        <?php endif ?>
-                    </a>
-                </div>
-
-                <div class="blog-card-details">
-                    <h3 class="blog-card-title">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                    </h3>
-
-                    <div class="blog-card-meta">
-                        <span> <?php the_time('F j, Y') ?> </span>
-                        &nbsp; | &nbsp; By &nbsp;
-                        <span> <?php the_author(); ?></span>
-                    </div>
-
-                    <p class="blog-card-exerpt">
-                        <?php the_excerpt(); ?>
-                    </p>
-                </div>
-
-            </div>
-
-        <?php
-        endwhile;
-        wp_reset_postdata();
-
-    else :
-        ?>
-        No latest posts found.
+<div class="dis-blog-pagination" style="<?php echo (is_home() && !is_paged()) ? 'display: none;' : ''; ?>">
     <?php
-
-    endif;
+    // Display pagination for the blog page
+    the_posts_pagination(array(
+        'mid_size' => 2,
+        'prev_text' => __('« Previous', 'textdomain'),
+        'next_text' => __('Next »', 'textdomain'),
+    ));
     ?>
-
 </div>
 
 <div class="dis-blog-page-btn">
-    <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">
-        View More
-    </a>
+    <?php if (is_home() && !is_paged()) : ?>
+        <button id="load-more-posts">View More</button>
+    <?php endif; ?>
 </div>
+
+
+
+
 <!-- Latest blog post - section ended -->
 
 
