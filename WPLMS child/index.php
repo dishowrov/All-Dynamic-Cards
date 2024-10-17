@@ -117,7 +117,7 @@ function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
                         <span> <?php the_author(); ?></span>
                     </div>
 
-                    <div class="blog-card-exerpt">
+                    <div class="blog-card-excerpt">
                         <?php the_excerpt(); ?>
                     </div>
                 </div>
@@ -189,10 +189,6 @@ function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
         <button id="load-more-posts">View More</button>
     <?php endif; ?>
 </div>
-
-
-
-
 <!-- Latest blog post - section ended -->
 
 

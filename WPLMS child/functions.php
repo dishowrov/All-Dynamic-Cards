@@ -79,8 +79,8 @@ function load_more_posts()
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
     $args = array(
-        'posts_per_page' => 6,
-        'paged' => $page, 
+        'posts_per_page' => 6, 
+        'paged' => $page,     
         'orderby' => 'date',
         'order' => 'DESC',
     );
@@ -115,7 +115,7 @@ function load_more_posts()
                         <span><?php the_author(); ?></span>
                     </div>
 
-                    <div class="blog-card-exerpt">
+                    <div class="blog-card-excerpt">
                         <?php the_excerpt(); ?>
                     </div>
                 </div>
@@ -131,6 +131,8 @@ function load_more_posts()
 }
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
+
+
 
 
 

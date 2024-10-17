@@ -259,10 +259,10 @@ h2.dis-blog-sec-title {
   line-height: 25.2px;
 }
 
-.dis-all-blog-posts .dis-blog-post-card .blog-card-details .blog-card-exerpt p {
-  color: #2B354E;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
+.dis-all-blog-posts .dis-blog-post-card .blog-card-details .blog-card-excerpt p {
+  color: #2B354E !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 16px !important;
   font-weight: 400;
   line-height: 28.8px;
   overflow: hidden;
@@ -314,7 +314,7 @@ h2.dis-blog-sec-title {
     color: #ed4266;
     font-size: 15px;
     border-radius: 3px;
-    border-color: #2b354e
+    border-color: #2b354e !important
 }
 
 .dis-blog-pagination .pagination .nav-links .page-numbers.current {
