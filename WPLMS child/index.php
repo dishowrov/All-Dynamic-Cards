@@ -16,7 +16,7 @@ get_header(vibe_get_header());
         </div>
 
         <div class="dis-blog-hero-right">
-            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/woman-working-on-computer.webp" alt="Hero image">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/woman-working-on-computer.webp" alt="Hero image">
         </div>
     </div>
 </div>
@@ -99,7 +99,7 @@ function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
                         <?php
                         if (has_post_thumbnail()) : the_post_thumbnail('large');
                         else : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/sass-rect.webp" alt="The Blog Thumbnail">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/sass-rect.webp" alt="The Blog Thumbnail">
                         <?php endif; ?>
                     </a>
                 </div>
@@ -163,7 +163,7 @@ function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
 <h2 class="dis-blog-sec-title">Latest Posts</h2>
 
 <div class="dis-all-blog-posts">
-    <?php 
+    <?php
     // Display the first 6 posts by default (on the first page only)
     if (is_home() && !is_paged()) {
         display_blog_posts('latest', 6); // 6 posts on the first page

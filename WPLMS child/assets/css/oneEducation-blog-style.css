@@ -320,6 +320,7 @@ h2.dis-blog-sec-title {
 .dis-blog-pagination .pagination .nav-links .page-numbers.current {
   background: #2b354e;
   color: #fff;
+  padding: 5px;
 }
 
 .dis-blog-pagination .pagination .nav-links .page-numbers:hover {
@@ -400,6 +401,8 @@ h2.dis-blog-sec-title {
   }
 }
 
+
+
 /* css of `search.php` */
 .dis-search-result-hero {
   background-color: #FAFAFA;
@@ -420,4 +423,33 @@ h2.dis-blog-sec-title {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 25px;
   font-weight: 700;
+}
+
+
+
+/* CSS of `archive.php` */
+.dis-archive-hero {
+  background-color: #FAFAFA;
+  text-align: center;
+  padding: 25px;
+  margin: 0;
+}
+
+.dis-archive-hero h1.dis-hero-title {
+  color: #2B354E;
+  font-family: "Inria Serif", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.dis-archive-hero h5.dis-hero-breadcrumb ul.breadcrumbs {
+  color: #2B354E;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.dis-archive-posts {
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
