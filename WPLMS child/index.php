@@ -51,7 +51,7 @@ get_header(vibe_get_header());
 
         <div class="dis-blog-navbar-searchbox">
             <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
-                <input type="text" placeholder="Search..." name="s">
+                <input type="text" placeholder="Search..." name="s" value="<?php echo get_search_query(); ?>">
 
                 <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>

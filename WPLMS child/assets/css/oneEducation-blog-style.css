@@ -303,27 +303,27 @@ h2.dis-blog-sec-title {
 }
 
 .dis-blog-pagination .pagination {
-    margin-top: 65px !important
+  margin-top: 65px !important
 }
 
 .dis-blog-pagination .pagination .nav-links {
-    text-align: center
+  text-align: center
 }
 
 .dis-blog-pagination .pagination .nav-links .page-numbers {
-    color: #ed4266;
-    font-size: 15px;
-    border-radius: 3px;
-    border-color: #2b354e !important
+  color: #ed4266;
+  font-size: 15px;
+  border-radius: 3px;
+  border-color: #2b354e !important
 }
 
 .dis-blog-pagination .pagination .nav-links .page-numbers.current {
-    background: #2b354e;
-    color: #fff;
+  background: #2b354e;
+  color: #fff;
 }
 
 .dis-blog-pagination .pagination .nav-links .page-numbers:hover {
-    background: #2b354e
+  background: #2b354e
 }
 
 
@@ -398,4 +398,26 @@ h2.dis-blog-sec-title {
     font-size: 33px;
     line-height: 55px;
   }
+}
+
+/* css of `search.php` */
+.dis-search-result-hero {
+  background-color: #FAFAFA;
+  text-align: center;
+  padding: 25px;
+  margin: 0;
+}
+
+.dis-search-result-hero h1 {
+  color: #2B354E;
+  font-family: "Inria Serif", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+}
+
+.dis-search-result-hero p {
+  color: #2B354E;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
 }
