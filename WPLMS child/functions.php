@@ -16,7 +16,8 @@ function child_theme_assets()
     // wp_enqueue_style("eduX-cards", get_stylesheet_directory_uri() . "/assets/css/eduX-course-card.css");
     // wp_enqueue_style("learnSkill-cards", get_stylesheet_directory_uri() . "/assets/css/learnSkill-course-card.css");
     // wp_enqueue_style("alphaAcademy-course-card", get_stylesheet_directory_uri() . "/assets/css/alphaAcademy-course-card.css");
-    wp_enqueue_style("oneEdu-blog-css", get_stylesheet_directory_uri() . "/assets/css/oneEducation-blog-style.css");
+    // wp_enqueue_style("oneEdu-blog-css", get_stylesheet_directory_uri() . "/assets/css/oneEducation-blog-style.css");
+    wp_enqueue_style("oneEdu-blog-css", get_stylesheet_directory_uri() . "/assets/css/teachersTraining-course_and_blog-card.css");
 
 
     /* JavaScripts files */
@@ -79,8 +80,8 @@ function load_more_posts()
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
     $args = array(
-        'posts_per_page' => 6, 
-        'paged' => $page,     
+        'posts_per_page' => 6,
+        'paged' => $page,
         'orderby' => 'date',
         'order' => 'DESC',
     );
@@ -146,3 +147,4 @@ add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
 // include get_stylesheet_directory() . "/inc/eduX-course-card.php";
 // include get_stylesheet_directory() . "/inc/learnSkill-course-card.php";
 // include get_stylesheet_directory() . "/inc/alphaAcademy-course-card.php";
+include get_stylesheet_directory() . "/inc/teachersTraining-course_and_blog-card.php";

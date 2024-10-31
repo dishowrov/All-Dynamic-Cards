@@ -149,12 +149,11 @@ function display_blog_posts($type = 'latest', $posts_per_page = 6, $paged = 1)
 
 <!-- Free Trial - section started -->
 <div class="dis-blog-trial-sec">
-    <h2 class="trial-sec-title">Empowering Minds, Transforming Lives</h2>
+    <h2 class="trial-sec-title">On-Demand Accredited Courses</h2>
 
-    <p class="trial-sec-desc">Enrol in any of the 3500+ high quality online training courses handpicked by our team
-        of experts and start learning today!</p>
+    <p class="trial-sec-desc">Enrol in any of the 5000+ high quality online training courses handpicked by our team of experts and start learning today!</p>
 
-    <a href="#" class="trial-sec-btn">Get Free Trial</a>
+    <a href="<?php site_url() ?>/free-courses/" class="trial-sec-btn">Claim Your Free CPD Course</a>
 </div>
 <!-- Free Trial - section ended -->
 
